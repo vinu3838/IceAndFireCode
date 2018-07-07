@@ -1,0 +1,140 @@
+
+
+ 
+
+<div *ngFor="let detail of details">
+ 
+<div class="row">
+  
+
+
+
+  <div class= "flex-container m-2 p-2"  *ngIf='detail[1]["authors"]'>
+    <div><h1>Books</h1></div>
+  <div>
+  <input type="text"  class="mt-2 mr-2"placeholder=" Search Books.." name="search" style="border-radius:10px;" [(ngModel)]="searchText">
+  </div>
+   </div>
+
+
+   <div class= "flex-container m-2 p-2"  *ngIf='detail[1]["aliases"]'>
+     <div><h1>Characters</h1></div>
+   <div>
+   <input type="text" [(ngModel)]="searchTextChar" class="mt-2 mr-2"placeholder=" Search Character.." name="search" style="border-radius:10px;">
+   </div>
+    </div>
+
+    <div class= "flex-container m-2 p-2"  *ngIf='detail[1]["region"]'>
+     <div><h1>Houses</h1></div>
+   <div>
+   <input type="text" [(ngModel)]="searchTextHouse" class="mt-2 mr-2"placeholder=" Search Houses.." name="search" style="border-radius:10px;">
+   </div>
+    </div>
+
+
+
+    <div *ngFor="let ViewDetail of detail"> 
+
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 m-2 BookInformation" *ngIf='(ViewDetail["authors"]) && (ViewDetail["name"] | filter:searchText)'>
+    
+    <div class="card book" style="width: 18rem;">
+      <div class="card-header">
+        Books
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>{{ViewDetail["name"]}}</b></li>
+        <li class="list-group-item" *ngFor= "let author of ViewDetail['authors']"><b>Authors: </b>{{author}}</li>
+        <li class="list-group-item"><b>Number of Pages:</b> {{ViewDetail["numberOfPages"]}}</li>
+        <li class="list-group-item"><b>ISBN:</b> {{ViewDetail["isbn"]}}</li>
+        <li class="list-group-item"><b>Released Date:</b>  {{ViewDetail["released"]|date}}</li>
+      </ul>
+      <div class="card-body">
+        <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+      </div>
+    </div>
+    
+  </div> 
+
+
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 m-2" *ngIf='(ViewDetail["aliases"])  && (ViewDetail["aliases"][0] | filter:searchTextChar)'>
+     
+    <div class="card char" style="width: 18rem;">
+      <div class="card-header">
+        Characters
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor= "let aliase of ViewDetail['aliases']"><b>{{aliase}}</b></li>
+        <li class="list-group-item"><b>Name:</b> {{ViewDetail["name"]}}</li>
+        <li class="list-group-item"><b>Gender:</b> {{ViewDetail["gender"]}}</li>
+        <li class="list-group-item"><b>Culture:</b> {{ViewDetail["culture"]}}</li>
+        <li class="list-group-item"><b>Born:</b> {{ViewDetail["born"]|date}}</li>
+      </ul>
+      <div class="card-body">
+        <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+      </div>
+    </div>
+    </div> 
+
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 m-2" *ngIf='ViewDetail["region"] && (ViewDetail["name"] | filter:searchTextHouse)'>
+      
+      
+      <div class="card house" style="width: 18rem;">
+        <div class="card-header">
+          Houses
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>{{ViewDetail["name"]}}</b></li>
+          <li class="list-group-item"><b>Coat Of Arms :</b> {{ViewDetail["coatOfArms"]}}</li>
+          <li class="list-group-item"><b>Region:</b> {{ViewDetail["region"]}}</li>
+          <li class="list-group-item"><b>Words of House:</b> {{ViewDetail["words"]}}</li>
+          <li class="list-group-item"><b>Founded On:</b> {{ViewDetail["founded"]}}</li>
+        </ul>
+        <div class="card-body">
+          <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+        </div>
+      </div>
+      </div> 
+
+
+</div>
+</div>
+</div>
+
+<!-- 
+<div class="page-header charHeader p-2 mt-3 mb-3">
+  <h1>Characters</h1>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 m-2">
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn-primary">Card link</a>
+    <a href="#" class="btn-primary">Another link</a>
+  </div>
+</div>
+  </div> 
+</div>
+
+<div class="page-header houseHeader p-2 mt-3 mb-3">
+  <h1>Houses</h1>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 m-2">
+    <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn-primary">Card link</a>
+    <a href="#" class="btn-primary">Another link</a>
+  </div>
+</div>
+  </div> 
+</div> -->
+ <!-- </div>
+</div> -->

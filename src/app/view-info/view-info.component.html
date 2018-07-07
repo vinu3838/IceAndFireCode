@@ -1,0 +1,258 @@
+<div class="container-fluid" *ngIf="(details.length > 0)">
+<div class="home">
+  <a [routerLink]="['']" class="btn btn-primary p-2 m-2 home-btn">Home</a>
+  <a (click)="Back()" class="btn btn-primary p-2 m-2 back-btn">Back</a>
+  </div>
+<table class="table table-striped">
+  <thead *ngIf="(details[0]['authors'])">
+    <tr>
+      <th class="title">Category</th>
+      <th class="Description">Book</th>
+  
+    </tr>
+  </thead>
+  <thead *ngIf="(details[0]['aliases'])">
+    <tr>
+      <th class="title">Category</th>
+      <th class="Description">Character</th>
+    </tr>
+  </thead>
+  <thead *ngIf="(details[0]['region'])">
+    <tr>
+      <th class="title">Category</th>
+      <th class="Description">House</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="(details[0]['authors'])">
+    <tr>
+      <td class="title">Name Of Book</td>
+      <td class="Description">{{details[0]['name']}}</td>
+    </tr>
+    <tr>
+      <td class="title">ISBN</td>
+      <td class="Description">{{details[0]['isbn']}}</td>
+    </tr>
+    <tr>
+      <td class="title">Authors Of Book</td>
+      <td class="Description">
+        <p  *ngFor= "let author of details[0]['authors']">{{author}}<br></p>
+      </td>
+    </tr>
+    <tr>
+      <td class="title">Number of Pages</td>
+      <td class="Description">{{details[0]['numberOfPages']}}</td>
+    </tr>
+    <tr>
+        <td class="title">Publisher</td>
+        <td class="Description">{{details[0]['publiser']}}</td>
+      </tr>
+      <tr>
+          <td class="title">Country</td>
+          <td class="Description">{{details[0]['country']}}</td>
+        </tr>
+        <tr>
+            <td class="title">Media Type</td>
+            <td class="Description">{{details[0]['mediaType']}}</td>
+          </tr>
+          <tr>
+              <td class="title">Released Date</td>
+              <td class="Description">{{details[0]['released'] | date}}</td>
+            </tr>
+
+
+            <tr>
+                <td class="title">Url Of Characters</td>
+                <td class="Description" style="font-size:0.8rem;">
+                 <a *ngFor= "let character of details[0]['characters']; let last=last" [routerLink]="['/Information',character]">{{character}} {{ last ? ' ':', '}}</a>
+                </td>
+              </tr>
+              <tr>
+                <td class="title">Url Of POV Characters</td>
+                <td class="Description" style="font-size:0.8rem;">
+                 <a *ngFor= "let povCharacters of details[0]['povCharacters']; let last=last" [routerLink]="['/Information',povCharacters]">{{povCharacters}} {{ last ? ' ':', '}}</a>
+                </td>
+              </tr>
+             
+
+  </tbody>
+  <tbody *ngIf="(details[0]['aliases'])">
+      <tr>
+        <td class="title">Name Of Character</td>
+        <td class="Description">{{details[0]['name']}}</td>
+      </tr>
+      <tr>
+        <td class="title">Gender</td>
+        <td class="Description">{{details[0]['gender']}}</td>
+      </tr>
+
+      <tr>
+          <td class="title">Culture</td>
+          <td class="Description">{{details[0]['culture']}}</td>
+        </tr>
+
+        <tr>
+            <td class="title">Birth of date</td>
+            <td class="Description">{{details[0]['born']}}</td>
+          </tr>
+
+
+          <tr>
+              <td class="title">Death date</td>
+              <td class="Description">{{details[0]['died']}}</td>
+            </tr>
+  
+
+
+      <tr>
+        <td class="title">Titles</td>
+        <td class="Description">
+          <p  *ngFor= "let titles of details[0]['titles']">{{titles}}<br> </p>
+        </td>
+      </tr>
+
+      <tr>
+          <td class="title">Aliases</td>
+          <td class="Description">
+            <p  *ngFor= "let aliases of details[0]['aliases']">{{aliases}}<br> </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="title">Information about Father</td>
+          <td class="Description"><a [routerLink]="['/Information',details[0]['father']]">{{details[0]['father']}}</a></td>
+        </tr>
+
+        <tr>
+          <td class="title">Information about Mother</td>
+          <td class="Description"><a [routerLink]="['/Information',details[0]['mother']]">{{details[0]['mother']}}</a></td>
+        </tr>
+
+        <tr>
+          <td class="title">Information about Spouse</td>
+          <td class="Description"><a [routerLink]="['/Information',details[0]['spouse']]">{{details[0]['spouse']}}</a></td>
+        </tr>
+        <tr>
+          <td class="title">Allegiances</td>
+          <td class="Description" style="font-size:0.8rem;">
+           <a *ngFor= "let allegiances of details[0]['allegiances']; let last=last" [routerLink]="['/Information',allegiances]">{{allegiances}} {{ last ? ' ':', '}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">Url of Books</td>
+          <td class="Description" style="font-size:0.8rem;">
+           <a *ngFor= "let books of details[0]['books']; let last=last" [routerLink]="['/Information',books]">{{books}} {{ last ? ' ':', '}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">Url of POV Books</td>
+          <td class="Description" style="font-size:0.8rem;">
+           <a *ngFor= "let povBooks of details[0]['povBooks']; let last=last" [routerLink]="['/Information',povBooks]">{{povBooks}} {{ last ? ' ':', '}}</a>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">TV Series GOT</td>
+          <td class="Description">
+           <p *ngFor= "let tvSeries of details[0]['tvSeries']">{{tvSeries}}<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">Played By</td>
+          <td class="Description">
+           <p *ngFor= "let playedBy of details[0]['playedBy']">{{playedBy}}<br></p>
+          </td>
+        </tr>  
+    </tbody>
+
+
+    <tbody *ngIf="(details[0]['region'])">
+      <tr>
+        <td class="title">Name Of House</td>
+        <td class="Description">{{details[0]['name']}}</td>
+      </tr>
+      <tr>
+        <td class="title">Region</td>
+        <td class="Description">{{details[0]['region']}}</td>
+      </tr>
+
+      <tr>
+          <td class="title">Coat of Arms</td>
+          <td class="Description">{{details[0]['coatOfArms']}}</td>
+        </tr>
+
+        <tr>
+            <td class="title">Words</td>
+            <td class="Description">{{details[0]['words']}}</td>
+          </tr>
+
+          <tr>
+            <td class="title">Titles</td>
+            <td class="Description">
+              <p  *ngFor= "let titles of details[0]['titles']">{{titles}}<br> </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">Seats</td>
+            <td class="Description">
+              <p  *ngFor= "let seats of details[0]['seats']">{{seats}}<br> </p>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td class="title">Information about Current Lord</td>
+            <td class="Description"><a [routerLink]="['/Information',details[0]['currentLord']]">{{details[0]['currentLord']}}</a></td>
+          </tr>
+
+          <tr>
+            <td class="title">Heir</td>
+            <td class="Description"><a [routerLink]="['/Information',details[0]['heir']]">{{details[0]['heir']}}</a></td>
+          </tr>
+
+          <tr>
+            <td class="title">Over Lord</td>
+            <td class="Description"><a [routerLink]="['/Information',details[0]['overlord']]">{{details[0]['overlord']}}</a></td>
+          </tr>
+  
+  
+          <tr>
+            <td class="title">Founded</td>
+            <td class="Description">{{details[0]['founded']}}</td>
+          </tr>
+
+          <tr>
+            <td class="title">Information of Founder</td>
+            <td class="Description"><a [routerLink]="['/Information',details[0]['founder']]">{{details[0]['founder']}}</a></td>
+          </tr>
+
+          
+          <tr>
+            <td class="title">Died Out</td>
+            <td class="Description">{{details[0]['diedOut']}}</td>
+          </tr>
+
+          <tr>
+            <td class="title">Ancestral Weapons</td>
+            <td class="Description">
+             <p *ngFor= "let ancestralWeapons of details[0]['ancestralWeapons']">{{ancestralWeapons}}<br></p>
+            </td>
+          </tr> 
+        
+  
+        <tr>
+          <td class="title">Cadet Branches</td>
+          <td class="Description" style="font-size:0.8rem;">
+           <a *ngFor= "let cadetBranches of details[0]['cadetBranches']; let last=last" [routerLink]="['/Information',cadetBranches]">{{cadetBranches}} {{ last ? ' ':', '}}</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="title">Url of Sworn Members</td>
+          <td class="Description" style="font-size:0.8rem;">
+           <a *ngFor= "let swornMembers of details[0]['swornMembers']; let last=last" [routerLink]="['/Information',swornMembers]">{{swornMembers}} {{ last ? ' ':', '}}</a>
+          </td>
+        </tr> 
+    </tbody>
+
+
+</table>
+</div>

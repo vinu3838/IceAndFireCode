@@ -1,0 +1,49 @@
+ table {
+    border:none;
+    border-collapse: collapse;
+}
+
+table td {
+    
+    border-right: 1px ridge rgb(94, 85, 85);
+}
+
+table td:first-child {
+    border-left: none;
+}
+
+table td:last-child {
+    border-right: none;
+} 
+
+.title
+{
+    width:20vw;
+    font-weight: bold;
+
+}
+
+.Description
+{
+
+    width:80vw;
+    text-align: left;
+    font-weight: normal;
+
+}
+
+.home
+{
+
+   
+   width:100%;
+}
+
+.home-btn
+{
+    float:right;
+}
+.back-btn
+{
+    float:left;
+}

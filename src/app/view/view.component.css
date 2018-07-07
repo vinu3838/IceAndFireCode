@@ -1,0 +1,82 @@
+.booksHeader,.charHeader,.houseHeader{
+
+background-color:yellow;
+width:100%;
+
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+    height:10vh;
+    width:100%;
+    justify-content: space-between;
+  
+   
+  }
+
+input
+{
+
+
+vertical-align: center;
+float:right;
+
+}
+
+.house
+{
+
+height:30vw;
+
+}
+
+
+.house >.list-group
+{
+
+    height:28vw;
+
+}
+@media screen and (max-width: 1600px) {
+  
+    .house
+    {
+    
+    height:40vw;
+    
+    }
+    
+    
+    .house >.list-group
+    {
+    
+        height:35vw;
+    
+    }
+
+  }
+
+
+@media screen and (max-width: 1160px) {
+  
+    .house
+{
+
+height:35vh;
+
+}
+
+
+.house >.list-group-flush
+{
+
+    height:30vh;
+
+}
+
+  }
+
+ 
