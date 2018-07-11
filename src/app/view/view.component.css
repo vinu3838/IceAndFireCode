@@ -1,16 +1,10 @@
-.booksHeader,.charHeader,.houseHeader{
 
-background-color:yellow;
-width:100%;
-
-
-}
 
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
     background-color: DodgerBlue;
-    height:10vh;
+    height:15vh;
     width:100%;
     justify-content: space-between;
   
@@ -30,10 +24,17 @@ float:right;
 {
 
 height:30vw;
-
 }
 
+.char{
 
+background: green;
+}
+
+.book{
+
+    background: red;
+    }
 .house >.list-group
 {
 

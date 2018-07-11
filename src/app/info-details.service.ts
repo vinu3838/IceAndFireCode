@@ -12,9 +12,10 @@ export class InfoDetailsService {
  
 
  Information=[];
-  allInfo=[];
+ allInfo=[];
   public getInfo()
   {
+    this.allInfo=[];
 //this.allBooks= 
 this.http.get('https://www.anapioficeandfire.com/api/books').subscribe(
 
@@ -23,6 +24,11 @@ data =>{
 this.allInfo.push(data);
 //console.log((this.allInfo));
 //return this.allInfo;
+
+},
+error => {
+alert("Error Occured");
+this.route.navigateByUrl('NotFound');
 
 }
 
@@ -34,6 +40,11 @@ data =>{
 this.allInfo.push(data);
 //return this.allInfo;
 
+},
+error => {
+alert("Error Occured");
+this.route.navigateByUrl('NotFound');
+
 }
 
 )
@@ -44,16 +55,21 @@ data =>{
 this.allInfo.push(data);
 //return this.allInfo;
 
+},
+error => {
+alert("Error Occured");
+this.route.navigateByUrl('NotFound');
+
 }
 )
-console.log((this.allInfo));
+//console.log((this.allInfo));
 return this.allInfo;
   }
 
 
   public getDetails(url:string)
   {
-    console.log(url);
+  //  console.log(url);
 this.http.get(url).subscribe(
 data =>{
   this.Information.pop();
@@ -69,7 +85,7 @@ this.route.navigateByUrl('');
 }
 
 )
-console.log((this.Information));
+//console.log((this.Information));
 return this.Information;
 }
 

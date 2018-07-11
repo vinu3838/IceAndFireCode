@@ -16,16 +16,20 @@ export class ViewComponent implements OnInit {
   //   console.log(url);
   //   this.route.navigateByUrl(`Information/${url}`);
   // }
+ //public i=0;
+
    details=[];
-  constructor(public infoBook: InfoDetailsService, public route:Router) { }
+  constructor(public infoBook: InfoDetailsService, public route:Router) {
+    //this.i++;
+   }
 
   ngOnInit() {
 
    this.details=  this.infoBook.getInfo();
 
- console.log(this.details);
+ //console.log(this.details);
 
-
+//console.log(this.i);
 }
 
 

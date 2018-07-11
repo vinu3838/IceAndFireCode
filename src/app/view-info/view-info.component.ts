@@ -25,16 +25,21 @@ export class ViewInfoComponent implements OnInit {
 this.location.back();
 
  }
+ Home()
+ {
+
+  this.route.navigateByUrl('');
+ }
 
   ngOnInit() {
     
     this.activeRote.params.subscribe( params => {
       this.url= params['url'];
-      console.log(this.url);
+     // console.log(this.url);
 
       this.details=this.Info.getDetails(this.url);
       
-      console.log(this.details);
+     // console.log(this.details);
      
     
     })

@@ -1,8 +1,6 @@
 
 
- 
-
-<div *ngFor="let detail of details">
+<div  *ngFor="let detail of details">
  
 <div class="row">
   
@@ -49,7 +47,7 @@
         <li class="list-group-item"><b>Released Date:</b>  {{ViewDetail["released"]|date}}</li>
       </ul>
       <div class="card-body">
-        <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+        <a [routerLink]="['/Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
       </div>
     </div>
     
@@ -70,7 +68,7 @@
         <li class="list-group-item"><b>Born:</b> {{ViewDetail["born"]|date}}</li>
       </ul>
       <div class="card-body">
-        <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+        <a [routerLink]="['/Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
       </div>
     </div>
     </div> 
@@ -90,7 +88,7 @@
           <li class="list-group-item"><b>Founded On:</b> {{ViewDetail["founded"]}}</li>
         </ul>
         <div class="card-body">
-          <a [routerLink]="['Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
+          <a [routerLink]="['/Information',ViewDetail['url']]" class="btn btn-primary">More Info</a>
         </div>
       </div>
       </div> 

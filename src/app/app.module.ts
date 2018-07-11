@@ -27,6 +27,7 @@ import { CompNotFoundComponent } from './comp-not-found/comp-not-found.component
     BrowserModule, 
     RouterModule.forRoot([
 
+  
     {path:'',component:ViewComponent},
     {path:'Information/:url',component:ViewInfoComponent},
     {path:'**',component:ViewComponent},

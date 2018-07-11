@@ -1,6 +1,6 @@
 <div class="container-fluid" *ngIf="(details.length > 0)">
 <div class="home">
-  <a [routerLink]="['']" class="btn btn-primary p-2 m-2 home-btn">Home</a>
+  <a (click)="Home()" class="btn btn-primary p-2 m-2 home-btn">Home</a>
   <a (click)="Back()" class="btn btn-primary p-2 m-2 back-btn">Back</a>
   </div>
 <table class="table table-striped">
